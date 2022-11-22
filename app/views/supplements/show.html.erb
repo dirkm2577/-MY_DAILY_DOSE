@@ -5,7 +5,9 @@
   <div>
     <%= @supplement.name %>
     <%= @supplement.description %>
-    <p>every <%= @supplement.frequency %></p>
+    <%= @supplement.frequency %>
     <p><%= @supplement.quantity %> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
   </div>
+  <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
+  <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>

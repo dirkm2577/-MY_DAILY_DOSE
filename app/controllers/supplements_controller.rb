@@ -32,6 +32,7 @@ class SupplementsController < ApplicationController
   end
 
   def destroy
+    raise
     @supplement.destroy
     redirect_to supplements_path, status: :see_other
   end
