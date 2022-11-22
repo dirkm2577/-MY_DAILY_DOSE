@@ -1,4 +1,11 @@
 <div class='container'>
-  <h1><%= @supplement.name %></h1>
-  <%= @supplement.photos %>
+  <% @supplement.photos.each do |photo| %>
+    <%= image_tag photo, width: 200 %>
+  <% end %>
+  <div>
+    <%= @supplement.name %>
+    <%= @supplement.description %>
+    <p>every <%= @supplement.frequency %></p>
+    <p><%= @supplement.quantity %> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
+  </div>
 </div>

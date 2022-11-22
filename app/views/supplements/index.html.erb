@@ -1,8 +1,13 @@
 <div class='container'>
   <h1>All the Supplements</h1>
   <% @supplements.each do |supplement| %>
-    <%= supplement.name %>
-    <%= supplement.photos %>
-
+    <%= link_to supplement_path(supplement) do %>
+      <% supplement.photos.each do |photo| %>
+        <%= image_tag photo, width: 200 %>
+      <% end %>
+      <div>
+        <%= supplement.name %>
+      </div>
+    <% end %>
   <% end %>
 </div>
