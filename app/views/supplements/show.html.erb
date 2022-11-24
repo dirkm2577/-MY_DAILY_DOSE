@@ -1,1 +1,7 @@
-<h1>This is One Supplement</h1>
+<div class="container">
+  <h1>This is One Supplement</h1>
+
+  <% @supplement.images.each do |image| %>
+  <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+</div>
