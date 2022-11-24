@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
 
-  def new
-    @review = Review.new
-  end
+  # def new
+  #   @review = Review.new
+  # end
 
   def create
     @review = Review.new(review_params)
+    @review.user_supplement_id = params[:supplement_id]
     if @review.save!
       redirect_to reviews_path
     else
