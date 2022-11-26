@@ -11,6 +11,7 @@ class SupplementsController < ApplicationController
 
   def create
     @supplement = Supplement.new(supplement_params)
+    @supplement.user = current_user
     if @supplement.save!
       redirect_to supplements_path
     else
@@ -19,6 +20,7 @@ class SupplementsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def edit
@@ -38,10 +40,11 @@ class SupplementsController < ApplicationController
   private
 
   def supplement_params
-    params.require(:supplement).permit(:name, :price, :description, :quantity, :frequency, :unit_measure, :images, :category)
+    params.require(:supplement).permit(:name, :price, :description, :quantity, :frequency, :unit_measure, :category, images: [])
   end
 
   def set_article
     @supplement = Supplement.find(params[:id])
   end
+
 end
