@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :supplements
   has_many :user_supplements
+  has_many :reviews, :through => :supplements
 end

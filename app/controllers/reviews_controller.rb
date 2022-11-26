@@ -7,9 +7,11 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user_supplement_id = params[:supplement_id]
+    @review.user = current_user
+    @review.supplement_id = params[:supplement_id]
+    # raise
     if @review.save!
-      redirect_to reviews_path
+      redirect_to supplements_path
     else
       render :new, status: :unprocessable_entity
     end
