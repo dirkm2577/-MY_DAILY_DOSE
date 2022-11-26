@@ -2,8 +2,8 @@
   <h1>All the Supplements</h1>
   <% @supplements.each do |supplement| %>
     <%= link_to supplement_path(supplement) do %>
-      <% supplement.images.each do |photo| %>
-        <%= image_tag photo, width: 200 %>
+      <% supplement.images.each do |image| %>
+        <%= cl_image_tag image.key, :cloud_name => "dach7c7ct", width: 200 %>
       <% end %>
       <div>
         <%= supplement.name %>
