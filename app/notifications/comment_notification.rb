@@ -25,5 +25,3 @@ class CommentNotification < Noticed::Base
   #   post_path(params[:post])
   # end
 end
-
-# , url: 'https://lewagon-alumni.slack.com/archives/C0462M11Q49'
