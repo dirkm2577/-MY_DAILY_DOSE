@@ -8,6 +8,16 @@
       <div>
         <%= supplement.name %>
       </div>
+      <div>
+        <% supplement.reviews.each do |review| %>
+          <%= review.content %>
+          <% review.rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <%= link_to 'Edit', edit_supplement_review_path(supplement.id, review.id), class: "btn btn-primary" %>
+          <%# <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
