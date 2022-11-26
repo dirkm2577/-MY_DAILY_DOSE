@@ -1,0 +1,8 @@
+<div class='container'>
+  <h1>Editing page for Reviews</h1>
+  <%= simple_form_for [@supplement, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit "Edit Review", class: "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
+  <% end %>
+</div>
