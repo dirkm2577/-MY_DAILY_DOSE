@@ -5,6 +5,9 @@
   <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
   <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <div>
+    <% @supplement.images.each do |image| %>
+      <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <%= @supplement.name %>
     <%= @supplement.description %>
     <%= @supplement.frequency %>
