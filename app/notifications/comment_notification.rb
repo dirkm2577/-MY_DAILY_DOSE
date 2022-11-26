@@ -8,7 +8,7 @@ class CommentNotification < Noticed::Base
   #
   # deliver_by :database
   # deliver_by :email, mailer: "UserMailer"
-  deliver_by :slack, url: 'https://lewagon-alumni.slack.com/archives/C0462M11Q49'
+  # deliver_by :slack
   # deliver_by :custom, class: "MyDeliveryMethod"
 
   # Add required params
@@ -25,3 +25,5 @@ class CommentNotification < Noticed::Base
   #   post_path(params[:post])
   # end
 end
+
+# , url: 'https://lewagon-alumni.slack.com/archives/C0462M11Q49'
