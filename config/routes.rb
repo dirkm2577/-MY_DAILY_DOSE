@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :supplements do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
+  resources :user_supplements
 end

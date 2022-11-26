@@ -1,7 +1,24 @@
-<div class="container">
-  <h1>This is One Supplement</h1>
+<div class='container'>
+  <% @supplement.photos.each do |photo| %>
+    <%= image_tag photo, width: 200 %>
+  <% end %>
+  <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
+  <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div>
+    <% @supplement.images.each do |image| %>
+      <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <%= @supplement.name %>
+    <%= @supplement.description %>
+    <%= @supplement.frequency %>
+    <p><%= @supplement.quantity %> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
+  </div>
+</div>
 
-  <% @supplement.images.each do |image| %>
-  <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class='container'>
+  <%= simple_form_for [@supplement, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit "Submit review", class: "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
+  <% end %>
 </div>

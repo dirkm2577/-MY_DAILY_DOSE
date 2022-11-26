@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_24_003502) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_11_26_095835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,10 +46,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_003502) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
-    t.bigint "user_supplement_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_supplement_id"], name: "index_reviews_on_user_supplement_id"
+    t.bigint "supplement_id"
+    t.bigint "user_id"
+    t.index ["supplement_id"], name: "index_reviews_on_supplement_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "supplements", force: :cascade do |t|
@@ -59,20 +62,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_003502) do
     t.integer "quantity"
     t.integer "frequency"
     t.string "unit_measure"
-    t.string "images"
+    t.string "photos"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_supplements_on_user_id"
-  end
-
-  create_table "user_supplements", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "supplement_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["supplement_id"], name: "index_user_supplements_on_supplement_id"
-    t.index ["user_id"], name: "index_user_supplements_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,6 +85,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_003502) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "reviews", "user_supplements"
   add_foreign_key "supplements", "users"
-  add_foreign_key "user_supplements", "supplements"
-  add_foreign_key "user_supplements", "users"
 end

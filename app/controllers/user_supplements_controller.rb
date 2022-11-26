@@ -1,8 +1,9 @@
-class SupplementsController < ApplicationController
+class UserSupplementsController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @supplements = Supplement.all
+    @user_supplements = UserSupplement.all
+    # raise
   end
 
   def new
@@ -40,11 +41,10 @@ class SupplementsController < ApplicationController
   private
 
   def supplement_params
-    params.require(:supplement).permit(:name, :price, :description, :quantity, :frequency, :unit_measure, :category, images: [])
+    params.require(:supplement).permit(:user_id, :supplement_id)
   end
 
   def set_article
-    @supplement = Supplement.find(params[:id])
+    @user_supplement = UserSupplement.find(params[:id])
   end
-
 end

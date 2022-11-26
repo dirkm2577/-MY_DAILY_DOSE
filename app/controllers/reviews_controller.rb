@@ -1,14 +1,17 @@
 class ReviewsController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
 
-  def new
-    @review = Review.new
-  end
+  # def new
+  #   @review = Review.new
+  # end
 
   def create
     @review = Review.new(review_params)
+    @review.user = current_user
+    @review.supplement_id = params[:supplement_id]
+    # raise
     if @review.save!
-      redirect_to reviews_path
+      redirect_to supplements_path
     else
       render :new, status: :unprocessable_entity
     end
