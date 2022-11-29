@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_095835) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_26_121348) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,15 +42,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_095835) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "recipient_type", null: false
+    t.bigint "recipient_id", null: false
+    t.string "type", null: false
+    t.jsonb "params"
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["read_at"], name: "index_notifications_on_read_at"
+    t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
+    t.bigint "supplement_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "supplement_id"
-    t.bigint "user_id"
     t.index ["supplement_id"], name: "index_reviews_on_supplement_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "supplements", force: :cascade do |t|
@@ -61,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_095835) do
     t.integer "quantity"
     t.integer "frequency"
     t.string "unit_measure"
-    t.string "photos"
+    t.string "images"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,5 +92,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_095835) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "supplements"
   add_foreign_key "supplements", "users"
 end

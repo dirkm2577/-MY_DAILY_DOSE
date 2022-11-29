@@ -1,7 +1,7 @@
 <div class='container'>
   <div>
     <% @supplement.images.each do |image| %>
-      <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag image.key, :cloud_name => "dach7c7ct", height: 300, width: 400, crop: :fill %>
     <% end %>
     <%= @supplement.name %>
     <%= @supplement.description %>
