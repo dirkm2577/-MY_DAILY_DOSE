@@ -57,10 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_121348) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
-    t.bigint "supplement_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "supplement_id"
+    t.bigint "user_id"
     t.index ["supplement_id"], name: "index_reviews_on_supplement_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "supplements", force: :cascade do |t|
@@ -71,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_121348) do
     t.integer "quantity"
     t.integer "frequency"
     t.string "unit_measure"
-    t.string "images"
+    t.string "photos"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,6 +94,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_121348) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "reviews", "supplements"
   add_foreign_key "supplements", "users"
 end
