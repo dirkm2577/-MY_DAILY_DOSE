@@ -1,5 +1,6 @@
 <nav class="navbar navbar-light navbar-expand-sm navbar-lewagon fixed-top py-3" style="background: linear-gradient(#72ce27 26%, rgb(255,153,0) 77%, #ff9900 100%), #72ce27;">
   <div class="container-fluid">
+  
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669477819/YinYang-MyDailyDose-orange_Logo.png_p8drp0.png" %>
     <% end %>
@@ -7,6 +8,20 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <%# searchbar code %>
+    <div class="container">
+      <div class="form-div">
+        <%= form_with url: supplements_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a Supplement"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
