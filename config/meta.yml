@@ -1,5 +1,5 @@
 meta_product_name: "MyDailyDose"
 meta_title: "MyDailyDose - keeping track of all your supplements"
 meta_description: "With MyDailyDose you always know what supplements to take and even get a reminder for when to take them. Also, see reviews and find the most important benefits."
-meta_image: "YinYang-MyDailyDose-orange Logo.png" # should exist in `app/assets/images/`
+meta_image: "Social_MyDailyDose_cover.png" # should exist in `app/assets/images/`
 twitter_account: "@MyDailyDose_de"   # required for Twitter Cards
