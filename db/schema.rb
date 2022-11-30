@@ -57,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105751) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
+    t.bigint "supplement_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -72,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105751) do
     t.integer "quantity"
     t.integer "frequency"
     t.string "unit_measure"
-    t.string "photos"
+    t.string "images"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
