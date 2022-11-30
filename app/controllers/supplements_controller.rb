@@ -3,6 +3,11 @@ class SupplementsController < ApplicationController
 
   def index
     @supplements = Supplement.all
+    if params[:query].present?
+      @supplements = Supplement.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @supplements = Supplement.all
+    end
   end
 
   def new
