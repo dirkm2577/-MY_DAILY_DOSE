@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user_id = current_user
+    @review.user = current_user
     @review.supplement_id = params[:supplement_id]
     if @review.save!
       redirect_to supplements_path
