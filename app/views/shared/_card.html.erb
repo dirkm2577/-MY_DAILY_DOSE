@@ -1,0 +1,21 @@
+<div class="container py-4 py-xl-5">
+  <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-4">
+    <% @supplements.each do |supplement| %>
+      <%= link_to supplement_path(supplement) do %>
+      <div class="card-supp">
+        <%= cl_image_tag supplement.images[0].key, :cloud_name => "dach7c7ct", class: "img", width: 150 %>
+        <div class="card-supp-infos">
+          <div>
+            <h2><%= supplement.name %></h2>
+            <% supplement.reviews.each do |review| %>
+              <% review.rating.times do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
