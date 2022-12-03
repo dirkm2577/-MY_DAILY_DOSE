@@ -20,10 +20,10 @@ puts "Creating Supplement 1"
 
 supplement1 = Supplement.new(name: "Vitamin D3", price: 12, description: "Vitamin D3 is the body's preferred form of vitamin D and can help support many aspects of health.Vitamin D3 (5,000 IU) is a high-potency vitamin D supplement and contains lanolin-derived cholecalciferol in soft fish gelatin capsules", user: user1, quantity: 60, frequency: 1, unit_measure: "125 mcg (5000 IU)", category: "vitamins")
 
-puts "Adding image 1"
-file1 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669217280/Vitamin_D_image_3_q22peu.png')
-supplement1.images.attach(io: file1, filename: 'vitamin_d_image_1.png', content_type: 'image/png')
-supplement1.save!
+# puts "Adding image 1"
+# file1 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669217280/Vitamin_D_image_3_q22peu.png')
+# supplement1.images.attach(io: file1, filename: 'vitamin_d_image_1.png', content_type: 'image/png')
+# supplement1.save!
 
 puts "Adding image 2"
 file2 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669217281/Vitamin_D_image_2_lt9txk.png')
