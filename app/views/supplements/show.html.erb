@@ -9,7 +9,7 @@
       <div class="carousel-inner">
         <% @supplement.images.each_with_index do |image, index| %>
           <div class="carousel-item <% if index == 0 %> active <% end %>" >
-            <%= cl_image_tag image.key, :cloud_name => "dach7c7ct", height: 300 %>
+            <%= cl_image_tag image.key, :cloud_name => "dach7c7ct", height: 300%>
           </div>
         <% end %>
       </div>

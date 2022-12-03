@@ -1,1 +1,9 @@
+<%= simple_form_for :search, url: supplements_path, method: :get do |f| %>
+      <div class="search-container">
+        <input class="search-input" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="search-button">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    <% end %>
 <%= render "shared/card" %>
