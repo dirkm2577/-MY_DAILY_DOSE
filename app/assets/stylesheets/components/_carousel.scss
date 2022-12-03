@@ -9,10 +9,11 @@
 }
 
 .carousel-inner {
-  justify-content: space-around;
-  align-items: center;
+  // justify-content: space-around;
+  // align-items: center;
   height: 350px;
   width: 450px;
+  margin-left: 100px;
 }
 
 .carousel-item {
@@ -22,6 +23,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  object-fit: contain;
 }
 
 .carousel-control-prev-icon,
