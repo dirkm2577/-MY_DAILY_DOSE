@@ -19,7 +19,6 @@ class SupplementsController < ApplicationController
     @supplement.user = current_user
     @comment = "The notifications are working!!"
     if @supplement.save!
-      raise
       CommentNotification.with(comment: @comment).deliver(current_user)
       redirect_to supplements_path
     else
