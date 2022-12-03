@@ -4,7 +4,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #B4FF9F;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,7 +16,7 @@
 }
 
 .navbar {
-  background: linear-gradient(#72ce27 26%, rgb(255,153,0) 77%, #ff9900 100%), #72ce27;
+  background: #B4FF9F;
   position: relative;
   border-style: none
 }
@@ -31,12 +31,21 @@
 }
 
 .dropdown-menu {
-  background: rgb(255,153,0);
+  background: #FFD59E;
   font-family: ABeeZee, sans-serif;
 }
 
-.btn {
-  background: rgba(255, 153, 0, 0);
+.btn-flat {
+  color: white;
+  padding: 4px 24px;
+  border-radius: 4px;
+  background: #FF9900;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #FFD59E;
+  color: white;
 }
 
 .burger {
