@@ -23,21 +23,41 @@
       </a>
     </div>
   </div>
-  <div>
-    <h3><%= @supplement.name %></h3> <br>
-    <p><%= @supplement.description %></p> <br>
-    <h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
-      <select id="frequency" name="frequency">
-        <option value="daily">daily</option>
-        <option value="weekly">weekly</option>
-      </select>
-      <select id="instructions" name="instructions">
-        <option value="with-meal">with a meal</option>
-        <option value="without-meal">before or after a meal</option>
-        <option value="with-water">with a glas of water</option>
-      </select><br>
-    <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
+
+  <h3><%= @supplement.name %></h3> <br>
+  <div class="warpper">
+  <input class="radio" id="one" name="group" type="radio" checked>
+  <input class="radio" id="two" name="group" type="radio">
+  <input class="radio" id="three" name="group" type="radio">
+  <div class="tabs">
+    <label class="tab" id="one-tab" for="one">CSS</label>
+    <label class="tab" id="two-tab" for="two">Skills</label>
+    <label class="tab" id="three-tab" for="three">Prerequisites</label>
   </div>
+  <div class="panels">
+    <div class="panel" id="one-panel">
+      <div class="panel-title">What this supplement is good for:</div>
+        <p class="tab-content"><%= @supplement.description %></p>
+    </div>
+    <div class="panel" id="two-panel">
+      <div class="panel-title">How to take this supplement:</div>
+        <h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
+        <select id="frequency" name="frequency">
+          <option value="daily">daily</option>
+          <option value="weekly">weekly</option>
+        </select>
+        <select id="instructions" name="instructions">
+          <option value="with-meal">with a meal</option>
+          <option value="without-meal">before or after a meal</option>
+          <option value="with-water">with a glas of water</option>
+        </select>
+    </div>
+    <div class="panel" id="three-panel">
+      <div class="panel-title">How much you have left:</div>
+      <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
+    </div>
+  </div>
+</div>
   <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
   <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
@@ -52,3 +72,40 @@
     <% end %>
   </div>
 </div>
+
+
+
+<!--<h2>CSS Tab</h2>
+
+
+  <div class="wrapper">
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+        <label for="tab-1" class="tab-label">Description</label>
+        <div class="panel-title">What this supplement is good for:</div>
+        <p class="tab-content"><%= @supplement.description %></p>
+      </div>
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <label for="tab-2" class="tab-label">Instructions</label>
+        <div class="panel-title">How to take this supplement:</div>
+        <h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
+        <select id="frequency" name="frequency">
+          <option value="daily">daily</option>
+          <option value="weekly">weekly</option>
+        </select>
+        <select id="instructions" name="instructions">
+          <option value="with-meal">with a meal</option>
+          <option value="without-meal">before or after a meal</option>
+          <option value="with-water">with a glas of water</option>
+        </select>
+      </div>
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <label for="tab-2" class="tab-label">Supply</label>
+        <div class="panel-title">How much you have left:</div>
+        <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
+      </div>
+    </div>
+  </div>
