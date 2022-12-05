@@ -16,14 +16,17 @@
   margin-left: 100px;
 }
 
-.carousel-item {
+.carousel-item img{
+
   background-attachment: fixed;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  object-fit: contain;
+  object-fit: cover;
+  height: 350px;
+  width: 350px;
 }
 
 .carousel-control-prev-icon,
