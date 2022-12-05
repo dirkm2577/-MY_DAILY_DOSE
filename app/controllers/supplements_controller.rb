@@ -17,9 +17,10 @@ class SupplementsController < ApplicationController
   def create
     @supplement = Supplement.new(supplement_params)
     @supplement.user = current_user
-    notification = CommentNotification.with(comment: "Hello")
+    @comment = "The notifications are working!!"
     if @supplement.save!
-      notification.deliver(current_user)
+      raise
+      CommentNotification.with(comment: @comment).deliver(current_user)
       redirect_to supplements_path
     else
       render :new, status: :unprocessable_entity
