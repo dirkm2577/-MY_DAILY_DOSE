@@ -17,9 +17,13 @@ class SupplementsController < ApplicationController
   def create
     @supplement = Supplement.new(supplement_params)
     @supplement.user = current_user
-    @comment = "The notifications are working!!"
     if @supplement.save!
-      CommentNotification.with(comment: @comment).deliver(current_user)
+      comment = if @supplement.frequency == 1
+        "Don't forget to take #{@supplement.name} once per day"
+      else
+        "Don't forget to take #{@supplement.name} #{@supplement.frequency} times per day"
+      end
+      CommentNotification.with(comment: comment).deliver(current_user)
       redirect_to supplements_path
     else
       render :new, status: :unprocessable_entity
