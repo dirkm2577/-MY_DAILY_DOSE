@@ -4,6 +4,7 @@
   padding: 375px 0;
   justify-content: center;
   align-items: center;
+  background-image: url(https://res.cloudinary.com/dach7c7ct/image/upload/v1669742040/sunlight_wo7bh7.png);
 }
 
 .banner h1 {
@@ -33,16 +34,12 @@
 }
 
 .btn {
-  background-color: rgba(255, 153, 0, 0.43);
   border-radius: 50px;
+  background-color: $my-orange !important;
+  border-color: $my-orange;
 }
 
 .btn-lg{
   background-color: rgba(255, 153, 0, 0.43);
   border-radius: 50px;
-}
-
-.page .landing-page {
-  font-family: Arial, Helvetica, sans-serif;
-
 }
