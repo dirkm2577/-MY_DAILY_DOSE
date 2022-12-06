@@ -9,7 +9,7 @@
       <div class="carousel-inner">
         <% @supplement.images.each_with_index do |image, index| %>
           <div class="carousel-item <% if index == 0 %> active <% end %>" >
-            <%= cl_image_tag image.key, :cloud_name => "dach7c7ct", height: 300 %>
+            <%= cl_image_tag image.key, :cloud_name => "dach7c7ct", height: 300, width: 300 %>
           </div>
         <% end %>
       </div>
@@ -25,22 +25,26 @@
   </div>
 
   <h3><%= @supplement.name %></h3> <br>
-  <div class="warpper">
-  <input class="radio" id="one" name="group" type="radio" checked>
-  <input class="radio" id="two" name="group" type="radio">
-  <input class="radio" id="three" name="group" type="radio">
-  <div class="tabs">
-    <label class="tab" id="one-tab" for="one">CSS</label>
-    <label class="tab" id="two-tab" for="two">Skills</label>
-    <label class="tab" id="three-tab" for="three">Prerequisites</label>
-  </div>
-  <div class="panels">
-    <div class="panel" id="one-panel">
-      <div class="panel-title">What this supplement is good for:</div>
+
+  <div class="conainer tabs">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions" type="button" role="tab" aria-controls="instructions" aria-selected="false">Instructions</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="supply-tab" data-bs-toggle="tab" data-bs-target="#supply" type="button" role="tab" aria-controls="supply" aria-selected="false">Supply</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+        <br><h4 class="panel-title">What this supplement is good for:</h4><br>
         <p class="tab-content"><%= @supplement.description %></p>
-    </div>
-    <div class="panel" id="two-panel">
-      <div class="panel-title">How to take this supplement:</div>
+      </div>
+      <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
+        <br><h4 class="panel-title">How to take this supplement:</h4><br>
         <h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
         <select id="frequency" name="frequency">
           <option value="daily">daily</option>
@@ -51,16 +55,19 @@
           <option value="without-meal">before or after a meal</option>
           <option value="with-water">with a glas of water</option>
         </select>
+      </div>
+      <div class="tab-pane fade" id="supply" role="tabpanel" aria-labelledby="supply-tab">
+        <br><h4 class="panel-title">How much you have left:</h4><br>
+        <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
+      </div>
     </div>
-    <div class="panel" id="three-panel">
-      <div class="panel-title">How much you have left:</div>
-      <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
-    </div>
-  </div>
 </div>
+
+<br><div class="container change-supp">
   <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
   <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
+
 
 <div class='container reviews'>
   <h2>Reviews</h2>
@@ -72,40 +79,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-<!--<h2>CSS Tab</h2>
-
-
-  <div class="wrapper">
-    <div class="tabs">
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-        <label for="tab-1" class="tab-label">Description</label>
-        <div class="panel-title">What this supplement is good for:</div>
-        <p class="tab-content"><%= @supplement.description %></p>
-      </div>
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-        <label for="tab-2" class="tab-label">Instructions</label>
-        <div class="panel-title">How to take this supplement:</div>
-        <h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
-        <select id="frequency" name="frequency">
-          <option value="daily">daily</option>
-          <option value="weekly">weekly</option>
-        </select>
-        <select id="instructions" name="instructions">
-          <option value="with-meal">with a meal</option>
-          <option value="without-meal">before or after a meal</option>
-          <option value="with-water">with a glas of water</option>
-        </select>
-      </div>
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-        <label for="tab-2" class="tab-label">Supply</label>
-        <div class="panel-title">How much you have left:</div>
-        <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
-      </div>
-    </div>
-  </div>
