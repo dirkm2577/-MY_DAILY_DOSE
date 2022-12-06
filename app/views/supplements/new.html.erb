@@ -1,5 +1,5 @@
 <div class="container form">
-  <h1>This is a form for a new Supplement</h1>
+  <h1>Add a new supplement</h1>
 
   <%= simple_form_for(@supplement) do |f| %>
     <%= f.input :name, placeholder: 'name of the supplement' %>
@@ -10,6 +10,6 @@
     <%= f.input :unit_measure %>
     <%= f.input :category, placeholder: 'vitamins, amino acids, minerals etc' %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Add supplement", :class => "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
+    <%= f.submit "Add supplement", :class => "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 18px; padding: 10px; border-radius: 999px" %>
   <% end %>
 </div>

@@ -12,6 +12,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.btn-primary :hover {
+  background: #FFD59E;
+  color: white;
+}
+
 .btn-flat {
   color: white;
   padding: 4px 24px;
@@ -21,12 +26,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.btn-flat:hover {
-  background: #FFD59E;
-  color: white;
-}
-
-.btn-primary:hover {
+.btn-flat :hover {
   background: #FFD59E;
   color: white;
 }
