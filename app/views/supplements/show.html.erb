@@ -37,6 +37,9 @@
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="supply-tab" data-bs-toggle="tab" data-bs-target="#supply" type="button" role="tab" aria-controls="supply" aria-selected="false">Supply</button>
       </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="true">Reviews</button>
+      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
@@ -45,7 +48,7 @@
       </div>
       <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
         <br><h4 class="panel-title">How to take this supplement:</h4><br>
-        <h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
+        <br><h4><%= @supplement.frequency %></h4><label for="frequency">times:</label>
         <select id="frequency" name="frequency">
           <option value="daily">daily</option>
           <option value="weekly">weekly</option>
@@ -60,22 +63,20 @@
         <br><h4 class="panel-title">How much you have left:</h4><br>
         <p><strong><%= @supplement.quantity %></strong> <%= @supplement.quantity == 1 ? 'pill left' : 'pills left' %></p>
       </div>
+      <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+        <br><h3>Reviews</h3>
+        <div>
+          <%= simple_form_for [@supplement, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :rating %>
+            <%= f.submit "Submit review", class: "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
+          <% end %>
+        </div>
+      </div>
     </div>
 </div>
 
 <br><div class="container change-supp">
   <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
   <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-</div>
-
-
-<div class='container reviews'>
-  <h2>Reviews</h2>
-  <div>
-    <%= simple_form_for [@supplement, @review] do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating %>
-      <%= f.submit "Submit review", class: "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
-    <% end %>
-  </div>
 </div>
