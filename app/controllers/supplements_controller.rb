@@ -18,10 +18,10 @@ class SupplementsController < ApplicationController
     @supplement = Supplement.new(supplement_params)
     @supplement.user = current_user
     if @supplement.save!
-      comment = if @supplement.frequency == 1
-        "Don't forget to take #{@supplement.name} once per day"
+      comment = if @supplement.quantity == 1
+        "Don't forget to take #{@supplement.name} once #{supplement.frequency}"
       else
-        "Don't forget to take #{@supplement.name} #{@supplement.frequency} times per day"
+        "Don't forget to take #{@supplement.name} #{@supplement.quantity} times #{@supplement.frequency}"
       end
       CommentNotification.with(comment: comment).deliver(current_user)
       redirect_to supplements_path
