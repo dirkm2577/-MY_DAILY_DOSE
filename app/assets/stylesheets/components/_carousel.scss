@@ -1,51 +1,14 @@
 .carousel-window {
-  max-width: 50%;
-  // line-height: 1;
-  width: 100%;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  margin-left: 250px;
-  margin-right: 250px;
+  display: flex;
+  justify-content: center;
 }
 
-.carousel-inner {
-  // justify-content: space-around;
-  // align-items: center;
-  height: 350px;
-  width: 450px;
-  margin-left: 100px;
-}
-
-.carousel-item {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  object-fit: contain;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 50px;
-  width: 50px;
-  outline: black;
-  background-color: rgba(0, 0, 0, 0.3);
-  background-size: 100%, 100%;
-  border-radius: 50%;
-  border: 1px solid black;
-}
-
-.reviews {
+.carousel {
+  width: max($numbers: 500px);
   margin-top: 20px;
-}
+  margin-bottom: 25px;
+  .carousel-item {
+      text-align: center;
 
-h4 {
-  display: inline;
-  margin-right: 10px;
-}
-
-p {
-  margin-top: 20px;
+    }
 }
