@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :supplements, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+  has_many :reviews
   has_many :notifications, as: :recipient, dependent: :destroy
 end
