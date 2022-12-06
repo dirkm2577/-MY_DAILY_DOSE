@@ -1,8 +1,13 @@
 <h1>Notifications#index</h1>
-<p>Find me in app/views/notifications/index.html.erb</p>
 
-<% @notifications.each do |notification| %>
-  <div>
-    <%= notification.params[:comment] %>
+<div class="container py-4 py-xl-5">
+  <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-4">
+    <% @notifications.each do |notification| %>
+      <div class="card-supp">
+        <div class="card-supp-infos">
+          <p><%= notification.params[:comment] %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
