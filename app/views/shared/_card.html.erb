@@ -11,7 +11,7 @@
             <% supplement.reviews.each do |review| %>
               <% average += review.rating %>
             <% end %>
-            <%= average / supplement.reviews.count.to_f %>
+            <%= supplement.reviews.count >= 1 ? average.to_f / supplement.reviews.count : 0 %>
           </div>
         </div>
       </div>
