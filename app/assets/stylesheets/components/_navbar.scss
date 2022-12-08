@@ -5,12 +5,19 @@
   top: 0;
   border-style: none;
   height: 60px;
-  display: flex;
+  margin-left: 15px;
 
   li {
     text-decoration: none;
     list-style: none;
+    padding: 0 15px;
   }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown-menu {
