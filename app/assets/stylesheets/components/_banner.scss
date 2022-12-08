@@ -18,7 +18,7 @@
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
+  opacity: 1;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -28,18 +28,18 @@
   height: 1em;
 }
 
- .btn-outline-light .btn-lg{
-  background-color: rgba(255, 153, 0, 0.43);
-  border-radius: 50px;
-}
+//  .btn-outline-light .btn-lg{
+//   background-color: rgba(255, 153, 0, 0.43);
+//   border-radius: 50px;
+// }
 
-.btn {
-  border-radius: 50px;
-  background-color: $my-orange !important;
-  border-color: $my-orange;
-}
+// .btn {
+//   border-radius: 50px;
+//   background-color: $my-orange !important;
+//   border-color: $my-orange;
+// }
 
-.btn-lg{
-  background-color: rgba(255, 153, 0, 0.43);
-  border-radius: 50px;
-}
+// .btn-lg{
+//   background-color: rgba(255, 153, 0, 0.43);
+//   border-radius: 50px;
+// }
