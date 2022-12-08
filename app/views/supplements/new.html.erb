@@ -1,3 +1,4 @@
+<div class="container">
 <div class="container form">
   <h1>Add Supplement to your Stack:</h1>
 
@@ -8,7 +9,7 @@
     <%= f.input :remaining %>
     <div class='form-div'>
       <%= f.input :quantity %>
-      <%= f.input :frequency, as: :select, collection: ['daily', 'weekly', 'monthly'] %>
+      <%= f.input :frequency, as: :select, collection: ['daily', 'weekly', 'monthly'], prompt: 'please select' %>
     </div>
     <%= f.input :category, placeholder: 'vitamins, amino acids, minerals etc' %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
