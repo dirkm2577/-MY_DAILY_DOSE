@@ -19,12 +19,12 @@ class SupplementsController < ApplicationController
     @supplement.user = current_user
     if @supplement.save!
       comment = if @supplement.quantity == 1
-        "Don't forget to take #{@supplement.name} once #{supplement.frequency}"
+        "Don't forget to take #{@supplement.name} once #{@supplement.frequency}"
       else
         "Don't forget to take #{@supplement.name} #{@supplement.quantity} times #{@supplement.frequency}"
       end
       CommentNotification.with(comment: comment).deliver(current_user)
-      redirect_to supplements_path
+      redirect_to supplements_path(@supplement)
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,13 +39,13 @@ class SupplementsController < ApplicationController
 
   def update
     if @supplement.update(supplement_params)
-      redirect_to supplements_path
+      redirect_to supplements_path(@supplement)
     end
   end
 
   def destroy
     @supplement.destroy
-    redirect_to supplements_path, status: :see_other
+    redirect_to supplements_path(@supplement), status: :see_other
   end
 
   private

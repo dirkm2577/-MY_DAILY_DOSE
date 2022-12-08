@@ -1,5 +1,7 @@
+<div class="container">
 <div class="container form">
-  <h1>Add a new supplement</h1>
+
+  <h1>Add Supplement to your Stack:</h1>
 
   <%= simple_form_for(@supplement) do |f| %>
     <%= f.input :name, placeholder: 'name of the supplement' %>
@@ -8,10 +10,21 @@
     <%= f.input :remaining %>
     <div class='form-div'>
       <%= f.input :quantity %>
-      <%= f.input :frequency, as: :select, collection: ['daily', 'weekly', 'monthly'] %>
+      <%= f.input :frequency, as: :select, collection: ['daily', 'weekly', 'monthly'], prompt: 'please select' %>
     </div>
     <%= f.input :category, placeholder: 'vitamins, amino acids, minerals etc' %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Add supplement", :class => "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 18px; padding: 10px; border-radius: 999px" %>
+    <%= f.submit "Add supplement", :class => "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
+    <% if @supplement.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@supplement.errors.count, "error") %> prohibited this supplement from being saved:</h2>
+
+        <ul>
+          <% @supplement.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 </div>
