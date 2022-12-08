@@ -1,7 +1,13 @@
 <div class="container">
   <%= render "shared/carousel" %>
 
-  <h3><%= @supplement.name %></h3> <br>
+  <div class="name-heading">
+      <h3><%= @supplement.name %></h3>
+        <%= link_to edit_supplement_path(@supplement) do %><i class="fa-solid fa-pen"></i> <% end %>
+        <%= link_to supplement_path(@supplement), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+  </div>
 
   <div class="conainer tabs">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -52,9 +58,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<br><div class="container change-supp">
-  <%= link_to 'Edit', edit_supplement_path(@supplement), class: "btn btn-primary" %>
-  <%= link_to 'Delete', supplement_path(@supplement), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
