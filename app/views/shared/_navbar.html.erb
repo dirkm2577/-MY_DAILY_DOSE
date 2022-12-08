@@ -1,44 +1,24 @@
 <nav class="navbar">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669477819/YinYang-MyDailyDose-orange_Logo.png_p8drp0.png" %>
+  <% end %>
 
-
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669477819/YinYang-MyDailyDose-orange_Logo.png_p8drp0.png" %>
+  <ul class="">
+    <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669220890/Alex_avatar_ytczjp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "My Supplements", supplements_path, class: "dropdown-item" %>
+          <%= link_to "My Reminders", notifications_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+        </div>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <button class="btn btn-primary" type="button">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </button>
+      </li>
     <% end %>
-
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> %>
-
-    <%# searchbar code %>
-    <%# <div class='container'>
-      <%= simple_form_for :search, url: supplements_path, method: :get do |f| %>
-        <%# <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div> %>
-      <%# <% end %>
-    <%# </div> %>
-
-      <ul class="">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669220890/Alex_avatar_ytczjp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Supplements", supplements_path, class: "dropdown-item" %>
-              <%= link_to "My Reminders", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <button class="btn btn-primary" type="button">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </button>
-          </li>
-        <% end %>
-      </ul>
-
-
+  </ul>
 </nav>

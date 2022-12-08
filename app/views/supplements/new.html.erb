@@ -5,9 +5,11 @@
     <%= f.input :name, placeholder: 'name of the supplement' %>
     <%= f.input :price, placeholder: "in ￡'s per bottle" %>
     <%= f.input :description, placeholder: 'things to know' %>
-    <%= f.input :quantity, placeholder: 'amount of pills left' %>
-    <%= f.input :frequency, placeholder: 'things to know' %>
-    <%= f.input :unit_measure %>
+    <%= f.input :remaining %>
+    <div class='form-div'>
+      <%= f.input :quantity %>
+      <%= f.input :frequency, as: :select, collection: ['daily', 'weekly', 'monthly'] %>
+    </div>
     <%= f.input :category, placeholder: 'vitamins, amino acids, minerals etc' %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Add supplement", :class => "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
