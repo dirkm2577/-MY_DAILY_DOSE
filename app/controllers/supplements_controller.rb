@@ -17,10 +17,13 @@ class SupplementsController < ApplicationController
   def create
     @supplement = Supplement.new(supplement_params)
     @supplement.user = current_user
-    @comment = "The notifications are working!!"
     if @supplement.save!
-      raise
-      CommentNotification.with(comment: @comment).deliver(current_user)
+      comment = if @supplement.quantity == 1
+        "Don't forget to take #{@supplement.name} once #{supplement.frequency}"
+      else
+        "Don't forget to take #{@supplement.name} #{@supplement.quantity} times #{@supplement.frequency}"
+      end
+      CommentNotification.with(comment: comment).deliver(current_user)
       redirect_to supplements_path
     else
       render :new, status: :unprocessable_entity
@@ -48,7 +51,7 @@ class SupplementsController < ApplicationController
   private
 
   def supplement_params
-    params.require(:supplement).permit(:name, :price, :description, :quantity, :frequency, :unit_measure, :category, images: [])
+    params.require(:supplement).permit(:name, :price, :description, :quantity, :frequency, :remaining, :category, images: [])
   end
 
   def set_article
