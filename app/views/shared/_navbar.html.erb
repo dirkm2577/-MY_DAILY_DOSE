@@ -1,10 +1,15 @@
 <nav class="navbar">
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669477819/YinYang-MyDailyDose-orange_Logo.png_p8drp0.png" %>
+    <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1670472579/MyDailyDose_logo_428_194_px_ieeej8.png" %>
   <% end %>
 
   <ul class="">
     <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to new_supplement_path, class:"btn btn-primary" do %>
+          <i class="fa-solid fa-plus"></i>
+          <% end %>
+      </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669220890/Alex_avatar_ytczjp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -15,9 +20,7 @@
       </li>
     <% else %>
       <li class="nav-item">
-        <button class="btn btn-primary" type="button">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </button>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
       </li>
     <% end %>
   </ul>
