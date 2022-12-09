@@ -1,24 +1,32 @@
-<nav class="navbar">
+<%# <nav class="navbar">
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669477819/YinYang-MyDailyDose-orange_Logo.png_p8drp0.png" %>
-  <% end %>
+    <%# <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669477819/YinYang-MyDailyDose-orange_Logo.png_p8drp0.png" %>
+  <%# <% end %>
 
-  <ul class="">
+  <%# <ul class="">
     <% if user_signed_in? %>
-      <li class="nav-item dropdown">
+      <%# <li class="nav-item dropdown">
         <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669220890/Alex_avatar_ytczjp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "My Supplements", supplements_path, class: "dropdown-item" %>
-          <%= link_to "My Reminders", notifications_path, class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-        </div>
-      </li>
-    <% else %>
-      <li class="nav-item">
+          <%# <%= link_to "My Reminders", notifications_path, class: "dropdown-item" %>
+          <%# <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+        <%# </div>
+      </li> %>
+    <%# <% else %>
+      <%# <li class="nav-item">
         <button class="btn btn-primary" type="button">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </button>
+          <%= link_to "Login", new_user_session_path, class: "nav-link"
+        <%# </button>
       </li>
     <% end %>
-  </ul>
+  <%# </ul>
+</nav> %>
+
+
+<nav class="navbar navbar-light navbar-expand sticky-top bg-white navigation-clean">
+    <div class="container">
+        <div></div><a class="navbar-brand" href="#">My Daily Dose</a>
+        <div></div><a class="btn btn-primary ms-auto me-0 ms-5 navbar-btn" role="button" href="#">Log In</a>
+    </div>
 </nav>
