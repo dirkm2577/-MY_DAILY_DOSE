@@ -1,40 +1,10 @@
-// .navbar {
-//   justify-content: space-between;
-//   background: #ffffff;
-//   position: sticky;
-//   top: 0;
-//   border-style: none;
-//   height: 60px;
-//   display: flex;
-
-//   li {
-//     text-decoration: none;
-//     list-style: none;
-//   }
-// }
-
-// .dropdown-menu {
-//   background: #FFD59E;
-//   font-family: 'Poppins', sans-serif;
-// }
-
-// .dropdown-menu :hover {
-//   background: #FFD59E;
-//   color: white;
-// }
-
-// .navbar-brand img {
-//   height: 40px;
-
-// }
-
-
 .navbar {
   margin-left: 0px;
   padding-left: 0px;
   opacity: 0.80;
   backdrop-filter: blur(100px);
   justify-content: space-between;
+  align-items: center;
   background: #ffffff;
   position: sticky;
   top: 0;
@@ -71,7 +41,6 @@ ul {
 
 .navbar-brand img {
   height: 40px;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-bottom: 14px;
 }
-
-

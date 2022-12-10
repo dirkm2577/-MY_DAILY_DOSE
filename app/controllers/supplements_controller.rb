@@ -31,6 +31,7 @@ class SupplementsController < ApplicationController
 
   def show
     @review = Review.new
+    @notification = Notification.new
   end
 
   def edit
@@ -56,5 +57,4 @@ class SupplementsController < ApplicationController
   def set_article
     @supplement = Supplement.find(params[:id])
   end
-
 end
