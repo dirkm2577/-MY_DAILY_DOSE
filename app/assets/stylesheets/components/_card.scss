@@ -16,6 +16,7 @@
   font-weight: bold;
   margin: 0;
   text-decoration: none;
+  text-decoration-line: none;
 }
 
 .card-supp .card-supp-infos {
@@ -24,4 +25,21 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
