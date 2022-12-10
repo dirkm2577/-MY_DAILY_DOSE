@@ -8,6 +8,5 @@ class Supplement < ApplicationRecord
   validates :name, presence: { message: "must be given please" }
   validates :quantity, presence: { message: "must be given please" }
   validates :frequency, presence: { message: "must be given please" }
-  validates :images, inclusion: { in: %w(jpg jpeg gif png),
-    message: "This file has not a valid file type." }
+  validates :images, presence: true
 end

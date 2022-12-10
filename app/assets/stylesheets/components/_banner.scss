@@ -1,7 +1,7 @@
 .banner {
+  display: flex;
   background-size: cover;
   background-position: center;
-  padding: 375px 0;
   justify-content: center;
   align-items: center;
   background-image: url(https://res.cloudinary.com/dach7c7ct/image/upload/v1669742040/sunlight_wo7bh7.png);
@@ -48,10 +48,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("app/assets/images/sunlight.png");
-  background-position: center;
-  background-size: cover;
-  height: 400.688px;
+  // background-image: url("app/assets/images/sunlight.png");
+  // background-position: center;
+  // background-size: cover;
+  // height: 400.688px;
 
 }
 
