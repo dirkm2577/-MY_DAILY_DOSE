@@ -2,11 +2,12 @@
   <%= render "shared/carousel" %>
 
   <div class="name-heading">
-      <h3><%= @supplement.name %></h3>
-        <%= link_to edit_supplement_path(@supplement) do %><i class="fa-solid fa-pen"></i> <% end %>
-        <%= link_to supplement_path(@supplement), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
+    <h3><%= @supplement.name %></h3>
+    <%= link_to edit_supplement_path(@supplement) do %><i class="fa-solid fa-pen"></i> <% end %>
+    <%= link_to supplement_path(@supplement), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
   </div>
 
   <%= render "shared/show-tabs" %>
+</div>

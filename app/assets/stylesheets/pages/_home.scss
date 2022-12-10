@@ -44,25 +44,18 @@ body {
   font-size: 21px;
 }
 
-// .container input {
-//   font-family: Roboto, sans-serif;
-//   width: 300px;
-//   height: 18px;
-//   font-size: 18px;padding-left: 10px;
-//   padding-right: 10px;
-//   padding-top: 5px;
-//   padding-bottom: 5px;
-//   border-color: var(--bs-border-color-translucent);
-//   margin-top: 20px;
-//   text-align: left;
-// }
-
-.button-banner {
-  background: var(--bs-primary);
+.landing-page-input {
+  font-family: Roboto, sans-serif;
+  width: 300px;
+  height: 18px;
+  font-size: 18px;padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-color: var(--bs-border-color-translucent);
   margin-top: 20px;
-  border-radius: 10px;
+  text-align: left;
 }
-
 
 //second section features
 .main-section {

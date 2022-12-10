@@ -4,6 +4,7 @@
   opacity: 0.80;
   backdrop-filter: blur(100px);
   justify-content: space-between;
+  align-items: center;
   background: #ffffff;
   position: sticky;
   top: 0;
@@ -40,5 +41,6 @@ ul {
 
 .navbar-brand img {
   height: 40px;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-bottom: 14px;
 }
