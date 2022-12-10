@@ -1,15 +1,20 @@
 .btn {
-  border-radius: 10px;
+  font-weight: bold;
+  border-radius: 999px;
 }
 
 .btn-primary {
   background-color: #FF9900;
   color: white;
   padding: 4px 24px;
-  border-radius: 10px;
   background: #FF9900;
   transition: background 0.3s ease;
   font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary :hover {
+  background: #FFD59E;
+  color: white;
 }
 
 .btn-flat {
@@ -21,12 +26,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.btn-flat:hover {
-  background: #FFD59E;
-  color: white;
-}
-
-.btn-primary:hover {
+.btn-flat :hover {
   background: #FFD59E;
   color: white;
 }

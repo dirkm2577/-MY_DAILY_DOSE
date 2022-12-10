@@ -7,11 +7,11 @@
         <div class="card-supp-infos">
           <div>
             <h2><%= supplement.name %></h2>
+            <% average = 0 %>
             <% supplement.reviews.each do |review| %>
-              <% review.rating.times do %>
-                <i class="fa-solid fa-star"></i>
-              <% end %>
+              <% average += review.rating %>
             <% end %>
+            <%= supplement.reviews.count >= 1 ? average.to_f / supplement.reviews.count : 0 %>
           </div>
         </div>
       </div>

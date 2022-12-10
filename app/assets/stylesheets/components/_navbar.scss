@@ -40,8 +40,24 @@
   top: 0;
   border-style: none;
   height: 60px;
+  margin-left: 15px;
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0 15px;
+  }
+}
+
+ul {
   display: flex;
-  font-family: Poppins;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu {
+  background: #FFD59E;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar-brand {
@@ -54,9 +70,8 @@
     white-space: nowrap;
 }
 
-.navbar-btn {
-  font-family: Poppins, sans-serif;
-  border-radius: 10px;
-  --bs-primary: #ff9900;
-  --bs-primary-rgb: 255,153,0;
+.navbar-brand img {
+  height: 40px;
 }
+
+
