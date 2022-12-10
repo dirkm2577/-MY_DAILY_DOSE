@@ -13,7 +13,7 @@ class CommentNotification < Noticed::Base
 
   # Add required params
   #
-  param :comment
+  # param :comment
 
   # Define helper methods to make rendering easier.
   #

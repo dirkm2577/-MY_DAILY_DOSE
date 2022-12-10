@@ -31,6 +31,7 @@ class SupplementsController < ApplicationController
 
   def show
     @review = Review.new
+    @notification = Notification.new
   end
 
   def edit

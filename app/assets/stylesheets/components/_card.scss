@@ -15,7 +15,6 @@
   font-size: 20px;
   font-weight: bold;
   margin: 0;
-  text-decoration: none;
 }
 
 .card-supp .card-supp-infos {
@@ -24,4 +23,8 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+a {
+  text-decoration: none;
 }
