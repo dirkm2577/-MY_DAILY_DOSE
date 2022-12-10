@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :supplements, dependent: :destroy
   has_many :reviews
   has_many :notifications, as: :recipient, dependent: :destroy
+  has_one_attached :image
 end

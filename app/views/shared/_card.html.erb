@@ -1,23 +1,23 @@
 <div class="container py-4 py-xl-5">
   <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-4">
     <% @supplements.each do |supplement| %>
-    <% if supplement.user.id == current_user.id %>
-      <%= link_to supplement_path(supplement) do %>
-      <div class="card-supp">
-        <%= cl_image_tag supplement.images[0].key, :cloud_name => "dach7c7ct", class: "img", width: 150 %>
-        <div class="card-supp-infos">
-          <div>
-            <h2><%= supplement.name %></h2>
-            <% average = 0 %>
-            <% supplement.reviews.each do |review| %>
-              <% average += review.rating %>
-            <% end %>
-            <%= supplement.reviews.count >= 1 ? average.to_f / supplement.reviews.count : 0 %>
+      <% if supplement.user == current_user %>
+        <%= link_to supplement_path(supplement) do %>
+        <div class="card-supp">
+          <%= cl_image_tag supplement.images[0].key, :cloud_name => "dach7c7ct", class: "img", width: 150 %>
+          <div class="card-supp-infos">
+            <div>
+              <h2><%= supplement.name %></h2>
+              <% average = 0 %>
+              <% supplement.reviews.each do |review| %>
+                <% average += review.rating %>
+              <% end %>
+              <%= supplement.reviews.count >= 1 ? average.to_f / supplement.reviews.count : 0 %>
+            </div>
           </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
-    <% end %>
     <% end %>
   </div>
 </div>
