@@ -1,9 +1,11 @@
-<%= simple_form_for :search, url: supplements_path, method: :get do |f| %>
-      <div class="search-container">
-        <input class="search-input" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="search-button">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
+<%= form_with url: supplements_path, method: :get, class: "d-flex" do %>
+  <div class='container search-container'>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input",
+      placeholder: "Find a supplement"
+    %>
+    <%= submit_tag "Search", class: "search-button" %>
     <% end %>
+  </div>
 <%= render "shared/card" %>
