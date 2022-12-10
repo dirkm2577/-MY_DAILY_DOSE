@@ -19,7 +19,7 @@ user2 = User.new(email: "david@quest.com", password: "123456")
 
 puts "Creating Supplement 1"
 
-supplement1 = Supplement.new(name: "Vitamin D3", price: 12, description: "Vitamin D3 is the body's preferred form of vitamin D and can help support many aspects of health.Vitamin D3 (5,000 IU) is a high-potency vitamin D supplement and contains lanolin-derived cholecalciferol in soft fish gelatin capsules", user: user1, quantity: 60, frequency: 'daily', remaining: 150, category: "vitamins")
+supplement1 = Supplement.new(name: "Vitamin D3", price: 12, description: "Vitamin D3 is the body's preferred form of vitamin D and can help support many aspects of health.Vitamin D3 (5,000 IU) is a high-potency vitamin D supplement and contains lanolin-derived cholecalciferol in soft fish gelatin capsules", user: user1, quantity: 1, frequency: 'daily', remaining: 60, category: "vitamins")
 
 puts "Adding image 1"
 file1 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1670249888/Vitamin_D_image_1_ltkzib.png')
@@ -38,7 +38,7 @@ supplement1.save!
 
 puts "Creating Supplement 2"
 
-supplement2 = Supplement.new(name: "Omega-3 Fish Oil", price: 16, description: "Featuring Globally-Sourced, Highly-Refined Fish Oil. Concentrated and Molecularly Distilled. Helps to Maintain Optimal Lipid Profile.", user: user2, quantity: 240, frequency: 'daily', remaining: 640, category: "dietary supplements")
+supplement2 = Supplement.new(name: "Omega-3 Fish Oil", price: 16, description: "Featuring Globally-Sourced, Highly-Refined Fish Oil. Concentrated and Molecularly Distilled. Helps to Maintain Optimal Lipid Profile.", user: user2, quantity: 2, frequency: 'daily', remaining: 640, category: "dietary supplements")
 
 puts "Adding image 4"
 file4 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669217402/Omega_3_image_1_csatoq.png')
@@ -57,7 +57,7 @@ supplement2.save!
 
 puts "Creating Supplement 3"
 
-supplement3 = Supplement.new(name: "Trans-Resveratrol 600", price: 38, description: "Trans-Resveratrol is a unique antioxidant with the ability to cross the blood-brain barrier. 98% pure Trans-Resveratrol.", user: user2, quantity: 60, frequency: 'daily', remaining: 600, category: "dietary supplements")
+supplement3 = Supplement.new(name: "Trans-Resveratrol 600", price: 38, description: "Trans-Resveratrol is a unique antioxidant with the ability to cross the blood-brain barrier. 98% pure Trans-Resveratrol.", user: user2, quantity: 1, frequency: 'daily', remaining: 60, category: "dietary supplements")
 
 puts "Adding image 7"
 file7 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669217650/resveratrol_image_1_s1zatp.png')
@@ -76,7 +76,7 @@ supplement3.save!
 
 puts "Creating Supplement 4"
 
-supplement4 = Supplement.new(name: "Vitamin C", price: 9, description: "Dietary supplements in gummies form can be a great and tasty way to add essential nutrients to your daily routine, especially if you don't like taking capsules or tablets.", user: user1, quantity: 90, frequency: 'daily', remaining: 250, category: "vitamins")
+supplement4 = Supplement.new(name: "Vitamin C", price: 9, description: "Dietary supplements in gummies form can be a great and tasty way to add essential nutrients to your daily routine, especially if you don't like taking capsules or tablets.", user: user1, quantity: 1, frequency: 'daily', remaining: 90, category: "vitamins")
 
 puts "Adding image 10"
 file10 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669711075/Vitamin_C_image_1_vjlipy.png')
@@ -95,7 +95,7 @@ supplement4.save!
 
 puts "Creating Supplement 5"
 
-supplement5 = Supplement.new(name: "5-HTP", price: 10, description: "5-HTP is extracted from the seeds of the African black bean. In the brain, 5-HTP is converted into serotonin, a neurotransmitter found at the junctions (synapses) between neurons. It has a calming and relaxing effect and supports mental and emotional well-being as well as healthy sleep.", user: user2, quantity: 60, frequency: 'daily', remaining: 100, category: "weight-loss")
+supplement5 = Supplement.new(name: "5-HTP", price: 10, description: "5-HTP is extracted from the seeds of the African black bean. In the brain, 5-HTP is converted into serotonin, a neurotransmitter found at the junctions (synapses) between neurons. It has a calming and relaxing effect and supports mental and emotional well-being as well as healthy sleep.", user: user2, quantity: 1, frequency: 'daily', remaining: 100, category: "weight-loss")
 
 puts "Adding image 13"
 file13 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669712493/5-HTP_image_1_mwibwn.png')
@@ -114,7 +114,7 @@ supplement5.save!
 
 puts "Creating Supplement 6"
 
-supplement6 = Supplement.new(name: "High Absorption Magnesium", price: 12, description: "Doctor's Best Magnesium contains a daily dose of magnesium with high absorption capacity without burdening the gastrointestinal tract. This superior formula with 100% chelated lysinate glycinate magnesium absorbs effectively to support muscle relaxation and optimal nerve function.", user: user2, quantity: 60, frequency: 'daily', remaining: 200, category: "minerals")
+supplement6 = Supplement.new(name: "High Absorption Magnesium", price: 12, description: "Doctor's Best Magnesium contains a daily dose of magnesium with high absorption capacity without burdening the gastrointestinal tract. This superior formula with 100% chelated lysinate glycinate magnesium absorbs effectively to support muscle relaxation and optimal nerve function.", user: user2, quantity: 3, frequency: 'daily', remaining: 200, category: "minerals")
 
 puts "Adding image 16"
 file16 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669713211/Magnesium_image_1_htsnig.png')
@@ -142,7 +142,7 @@ supplement7.save!
 
 puts "Creating Supplement 8"
 
-supplement8 = Supplement.new(name: "Complete B-Complex", price: 12, description: "It is important to consume a broad spectrum of the vitamin B family every day. BioActive Complete B-Complex is made up of the biologically active forms of each nutrient, optimizing absorption and giving your body what it needs to thrive.", user: user2, quantity: 60, frequency: 'daily', remaining: 100, category: "vitamins")
+supplement8 = Supplement.new(name: "Complete B-Complex", price: 12, description: "It is important to consume a broad spectrum of the vitamin B family every day. BioActive Complete B-Complex is made up of the biologically active forms of each nutrient, optimizing absorption and giving your body what it needs to thrive.", user: user2, quantity: 1, frequency: 'daily', remaining: 100, category: "vitamins")
 
 puts "Adding image 20"
 file20 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669714771/Vitamin_B_image_1_cvy0ty.png')
@@ -156,7 +156,7 @@ supplement8.save!
 
 puts "Creating Supplement 9"
 
-supplement9 = Supplement.new(name: "Theracurmin", price: 17, description: "Curcumin is the yellow pigment in turmeric that has numerous health benefits but is not easily absorbed by the body. Theracurmin is a natural curcumin supplement that uses advanced techniques to reduce the particle size of curcumin, dramatically increasing its solubility and bioavailability.", user: user2, quantity: 60, frequency: 'daily', remaining: 30, category: "antioxidants")
+supplement9 = Supplement.new(name: "Theracurmin", price: 17, description: "Curcumin is the yellow pigment in turmeric that has numerous health benefits but is not easily absorbed by the body. Theracurmin is a natural curcumin supplement that uses advanced techniques to reduce the particle size of curcumin, dramatically increasing its solubility and bioavailability.", user: user2, quantity: 1, frequency: 'daily', remaining: 30, category: "antioxidants")
 
 puts "Adding image 22"
 file22 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669715338/Curcumin_image_1_ubg6bn.png')
@@ -170,7 +170,7 @@ supplement9.save!
 
 puts "Creating Supplement 10"
 
-supplement10 = Supplement.new(name: "Glucosamine", price: 18, description: "Doctor's Best Glucosamine Chondroitin MSM contains three key nutrients that support healthy joints and connective tissue: glucosamine, chondroitin, and methylsulfonylmethane (MSM, from OptiMSM). ", user: user2, quantity: 30, frequency: 'daily', remaining: 1500, category: "dietary supplements")
+supplement10 = Supplement.new(name: "Glucosamine", price: 18, description: "Doctor's Best Glucosamine Chondroitin MSM contains three key nutrients that support healthy joints and connective tissue: glucosamine, chondroitin, and methylsulfonylmethane (MSM, from OptiMSM). ", user: user2, quantity: 3, frequency: 'daily', remaining: 150, category: "dietary supplements")
 
 puts "Adding image 24"
 file24 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669715844/Glucosamine_image_1_vahmr9.png')
@@ -184,7 +184,7 @@ supplement10.save!
 
 puts "Creating Supplement 11"
 
-supplement11 = Supplement.new(name: "Probiotics", price: 44, description: "Our bodies are home to a microbiome of good bacteria that can support day-to-day bodily functions. Lake Avenue Nutrition Probiotics contains 10 different strains of these good bacteria that may support digestive and immune health.", user: user2, quantity: 180, frequency: 'daily', remaining: 160, category: "dietary supplements")
+supplement11 = Supplement.new(name: "Probiotics", price: 44, description: "Our bodies are home to a microbiome of good bacteria that can support day-to-day bodily functions. Lake Avenue Nutrition Probiotics contains 10 different strains of these good bacteria that may support digestive and immune health.", user: user2, quantity: 1, frequency: 'daily', remaining: 120, category: "dietary supplements")
 
 puts "Adding image 26"
 file26 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669716350/Probiotics_image_1_at6oub.png')
@@ -203,7 +203,7 @@ supplement10.save!
 
 puts "Creating Supplement 12"
 
-supplement12 = Supplement.new(name: "Vitamin E", price: 8, description: "Vitamin E is an antioxidant nutrient and supports the immune system.", user: user2, quantity: 110, frequency: 'daily', remaining: 180, category: "vitamins")
+supplement12 = Supplement.new(name: "Vitamin E", price: 8, description: "Vitamin E is an antioxidant nutrient and supports the immune system.", user: user2, quantity: 3, frequency: 'daily', remaining: 180, category: "vitamins")
 
 puts "Adding image 29"
 file29 = URI.open('https://res.cloudinary.com/dach7c7ct/image/upload/v1669716767/Vitamin_E_image_1_hapoid.png')
