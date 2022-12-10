@@ -1,8 +1,70 @@
-<div class="banner">
+<%# <div class="banner">
   <div class="container">
-    <h1>My Supplements all in one place!</h1>
-    <p>Find a nice and simple way to remind when to take your supplements<p>
+    <h1>All my Supplements in one place!</h1>
+    <p>The nice and simple way to get reminded when to take your supplements and keep all information about your stack in one place<p>
 
     <%= link_to "Add Supplement", new_supplement_path, class:"btn btn-primary" %>
+  <%# </div> %>
+<%# </div> %>
+
+<section>
+  <div class="main-section">
+    <div class="main-text text-center">
+      <h1 class="display-1 text-center" >My supplements all in one place!</h1>
+      <p class="text text-center" >Find a nice and simple way<br /> to track your supplements</p>
+      <div class="container">
+        <div class="row gy-2">
+          <div class="col-12 col-md-12 offset-0">
+            <input class="bg-light shadow-lg form-control-lg input" type="email" placeholder="Enter your email..."/>
+          </div>
+          <div class="col-md-12">
+            <button class="btn btn-primary button-banner" type="button" style="--bs-primary: #ff9900;--bs-primary-rgb: 255,153,0">Sign up!</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="section text-center features-icons">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+          <div class="d-flex features-icons-icon icons-big">
+            <svg class="m-auto text-primary text-h1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -32 576 576" width="1em" height="1em" fill="currentColor">
+              <path d="M112 32C50.12 32 0 82.12 0 143.1v223.1c0 61.88 50.12 111.1 112 111.1s112-50.12 112-111.1V143.1C224 82.12 173.9 32 112 32zM160 256H64V144c0-26.5 21.5-48 48-48s48 21.5 48 48V256zM299.8 226.2c-3.5-3.5-9.5-3-12.38 .875c-45.25 62.5-40.38 150.1 15.88 206.4c56.38 56.25 144 61.25 206.5 15.88c4-2.875 4.249-8.75 .75-12.25L299.8 226.2zM529.5 207.2c-56.25-56.25-143.9-61.13-206.4-15.87c-4 2.875-4.375 8.875-.875 12.38l210.9 210.7c3.5 3.5 9.375 3.125 12.25-.75C590.8 351.1 585.9 263.6 529.5 207.2z"></path>
+            </svg>
+          </div>
+          <h3>Supplements</h3>
+          <p class="lead mb-0">This will look...</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+          <div class="d-flex features-icons-icon icons-big">
+            <svg class="m-auto text-primary text-h1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+              <path d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"></path>
+            </svg>
+          </div>
+          <h3>Properties</h3>
+          <p class="lead mb-0">Featuring the latest...</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+          <div class="d-flex features-icons-icon icons-big">
+            <svg class="m-auto text-primary text-h1" xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
+              <path d="M152 352C138.7 352 128 341.3 128 328C128 314.7 138.7 304 152 304H296C309.3 304 320 314.7 320 328C320 341.3 309.3 352 296 352H152zM128 0C141.3 0 152 10.75 152 24V64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0zM400 192H48V448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192z"></path>
+            </svg>
+          </div>
+          <h3>Reminders...</h3>
+          <p class="lead mb-0">Ready to use with your own...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

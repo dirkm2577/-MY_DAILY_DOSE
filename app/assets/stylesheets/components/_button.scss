@@ -20,7 +20,7 @@
 .btn-flat {
   color: white;
   padding: 4px 24px;
-  border-radius: 4px;
+  border-radius: 10px;
   background: #FF9900;
   transition: background 0.3s ease;
   font-family: 'Poppins', sans-serif;
@@ -29,4 +29,16 @@
 .btn-flat :hover {
   background: #FFD59E;
   color: white;
+}
+
+.button-banner {
+  background: var(--bs-primary);
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  background: var(--bs-primary);
+  border-style: none;
+  font-family: Poppins, sans-serif;
+  backdrop-filter: blur(0px);
 }

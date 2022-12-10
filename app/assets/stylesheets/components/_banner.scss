@@ -39,7 +39,60 @@
 //   border-color: $my-orange;
 // }
 
-// .btn-lg{
-//   background-color: rgba(255, 153, 0, 0.43);
-//   border-radius: 50px;
-// }
+.btn-lg{
+  background-color: rgba(255, 153, 0, 0.43);
+  border-radius: 50px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("app/assets/images/sunlight.png");
+  background-position: center;
+  background-size: cover;
+  height: 400.688px;
+
+}
+
+.main-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.main.text h1 {
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  font-size: 39.2px;
+  color: var(--bs-white);
+  text-shadow: 0px 0px 10px var(--bs-black);
+}
+
+
+.main-text p {
+  color: var(--bs-white);
+  text-shadow: 0px 0px 8px var(--bs-black);
+  font-size: 21px;
+}
+
+.container input {
+  font-family: Roboto, sans-serif;
+  width: 300px;
+  height: 18px;
+  font-size: 18px;padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-color: var(--bs-border-color-translucent);
+  margin-top: 20px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.button-banner {
+  background: var(--bs-primary);
+  margin-top: 20px;
+  border-radius: 10px;
+}
