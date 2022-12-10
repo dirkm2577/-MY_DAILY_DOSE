@@ -11,3 +11,11 @@
 @import "pages/home";
 @import "pages/show";
 @import "components/index";
+
+
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
