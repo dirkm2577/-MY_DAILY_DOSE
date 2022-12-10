@@ -57,5 +57,4 @@ class SupplementsController < ApplicationController
   def set_article
     @supplement = Supplement.find(params[:id])
   end
-
 end
