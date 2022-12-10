@@ -34,9 +34,9 @@
 
       <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
         <br><h4 class="panel-title">How to take this supplement:</h4><br>
-        <br><h4><%= @supplement.frequency %></h4><label for="frequency">Times:</label>
 
-        <select id="frequency" name="frequency" class= "bg-light shadow-lg form-control-sm landing-page-input">
+        <br><h4><%= @supplement.quantity %></h4><label for="quantity">times:</label>
+        <select id="frequency" name="frequency">
           <option value="daily">daily</option>
           <option value="weekly">weekly</option>
         </select>
