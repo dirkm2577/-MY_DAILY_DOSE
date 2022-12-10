@@ -17,7 +17,6 @@
     <% if @supplement.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@supplement.errors.count, "error") %> prohibited this supplement from being saved:</h2>
-
         <ul>
           <% @supplement.errors.each do |error| %>
             <li><%= error.full_message %></li>
