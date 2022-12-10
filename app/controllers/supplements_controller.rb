@@ -2,11 +2,10 @@ class SupplementsController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @supplements = Supplement.all
     if params[:query].present?
       @supplements = Supplement.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @supplements = Supplement.all
+      @supplements = current_user.supplements
     end
   end
 
