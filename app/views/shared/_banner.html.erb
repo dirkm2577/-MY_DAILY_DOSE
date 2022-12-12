@@ -5,14 +5,16 @@
         <h1 class="display-1 text-center" >My supplements all in one place!</h1>
         <p class="text text-center" >The nice and simple way<br /> to track your supplements and get reminded just in time</p>
         <div class="container">
-          <div class="row gy-2">
-            <div class="col-12 col-md-12 offset-0" action="/app/views/devise/registrations/new.html.erb" method="get">
-              <input class="bg-light shadow-lg form-control-lg landing-page-input" type="email" name="email" placeholder="Enter your email..."/>
+          <% if user_signed_in? == false %>
+            <div class="row gy-2">
+              <div class="col-12 col-md-12 offset-0" action="/app/views/devise/registrations/new.html.erb" method="get">
+                <input class="bg-light shadow-lg form-control-lg landing-page-input" type="email" name="email" placeholder="Enter your email..."/>
+              </div>
+              <div class="col-md-12">
+                <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-primary" %>
+              </div>
             </div>
-            <div class="col-md-12">
-              <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-primary" %>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
