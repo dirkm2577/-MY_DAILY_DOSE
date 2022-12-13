@@ -3,7 +3,7 @@
     <div class="main-section">
       <div class="main-text text-center">
         <h1 class="display-1 text-center" >My supplements all in one place!</h1>
-        <p class="text text-center" >The nice and simple way<br /> to track your supplements and get reminded just in time</p>
+        <p class="text text-center" >The nice and simple way<br/>to track your supplements and get reminded just in time</p>
         <div class="container">
           <% if user_signed_in? == false %>
             <div class="row gy-2">
@@ -13,6 +13,10 @@
               <div class="col-md-12">
                 <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-primary" %>
               </div>
+            </div>
+          <% else %>
+            <div class="col-md-12">
+              <%= link_to "Add Supplement", new_supplement_path, class:"btn btn-primary" %>
             </div>
           <% end %>
         </div>
