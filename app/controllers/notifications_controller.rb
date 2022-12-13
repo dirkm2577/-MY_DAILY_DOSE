@@ -6,4 +6,5 @@ class NotificationsController < ApplicationController
 
   def create
     @notification = Notification.new(params[:params])
+  end
 end
