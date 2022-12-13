@@ -9,7 +9,7 @@
       <%= f.input :quantity %>
       <%= f.input :frequency, as: :select, collection: ['Daily', 'Weekly', 'Monthly'], prompt: 'please select' %>
     </div>
-    <%= f.input :category, placeholder: 'Vitamins, Amino acids, Minerals' %>
+    <%= f.input :category, as: :select, collection: ['vitamins', 'amino acids', 'minerals'] %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Edit Supplement", class: "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
   <% end %>
