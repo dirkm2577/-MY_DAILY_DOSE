@@ -65,7 +65,7 @@
         </div>
         <div>
           <%= simple_form_for @notification do |f| %>
-            <%= f.input :params, label: 'Comment' %>
+            <%= f.input :params, as: :json, label: 'Comment' %>
             <%= f.submit "Add notification", class: "btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 20px;" %>
           <% end %>
         </div>
