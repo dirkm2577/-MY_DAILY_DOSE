@@ -17,11 +17,14 @@
   flex: 1;
 }
 
-.search-button {
-  background: $my-orange;
-  border: none;
+.search-btn {
+  background-color: #FF9900;
   color: white;
-  font-weight: bold;
-  border-radius: 999px;
-  padding: 8px 30px;
+  padding: 4px 24px;
+  background: #FF9900;
+  transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-color: #ffffff;
+  margin-right: -2px;
 }
