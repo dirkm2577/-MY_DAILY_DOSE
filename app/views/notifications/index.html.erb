@@ -12,14 +12,4 @@
   </div>
 </div>
 
-<div class="container py-4 py-xl-5">
-  <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-4">
-    <% @notifications.each do |notification| %>
-      <div class="card-supp">
-        <div class="card-supp-infos">
-          <p><%= notification.params[:comment] %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render "shared/reminder-card" %>
