@@ -1,0 +1,28 @@
+.card-body {
+  width: 600px;
+  font-size: 24px;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  border-width: 0px;
+  border-radius: 10px;
+  color: var(--bs-card-bg);
+  background: rgba(255,153,0,0.79);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: var(--bs-card-height);
+  word-wrap: break-word;
+  border-radius: 10px;
+}
+
+
+.fa-bell::before {
+  content: "\f0f3";
+  font-size: 32px;
+}
+
+
+h2 {
+  margin-top: 30px;
+}
