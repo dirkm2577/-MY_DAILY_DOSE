@@ -1,17 +1,21 @@
+<%= link_to supplements_path do %>
+  <i class="arrow fa-solid fa-circle-left"></i>
+<% end %>
+
 <div class="container form">
 
   <h2>Add Supplement to your Stack:</h2>
 
   <%= simple_form_for(@supplement) do |f| %>
-    <%= f.input :name%>
-    <%= f.input :price%>
-    <%= f.input :description%>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
     <%= f.input :remaining %>
     <div class='form-div'>
       <%= f.input :quantity %>
       <%= f.input :frequency, as: :select, collection: ['Daily', 'Weekly', 'Monthly'], prompt: 'Please select' %>
     </div>
-    <%= f.input :category, as: :select, collection: ['vitamins', 'amino acids', 'minerals'] %>
+    <%= f.input :category, as: :select, collection: ['vitamins', 'amino acids', 'minerals', 'dietary supplement', 'prescription medication'] %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Add supplement", :class => " btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 18px; width" %>
     <% if @supplement.errors.any? %>
