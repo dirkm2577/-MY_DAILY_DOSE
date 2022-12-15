@@ -34,6 +34,7 @@
 }
 
 .navbar-brand {
+    display: flex;
     padding-top: var(--bs-navbar-brand-padding-y);
     padding-bottom: var(--bs-navbar-brand-padding-y);
     margin-right: var(--bs-navbar-brand-margin-end);
@@ -47,23 +48,31 @@
 .navbar-brand img {
   height: 40px;
   margin-left: 10px;
-  margin-bottom: 15px;
+  align-self: center;
+  margin-bottom: 25px;
   margin-top: -3px;
 }
 
-.navbar-collapse {
-  margin-top: -14px;
-}
-
-.navbar-link-s{
-  padding-right: 80px;
+.navbar-link-s {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
 }
 
 .navbar-link-r {
-  margin-right: 600px;
+  // margin-right: 600px;
   font-family: 'Poppins', sans-serif;
-  padding-right: 500px;
+  // padding-right: 500px;
   font-size: 18px;
+}
+
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+
+  #index-links {
+    display: flex;
+  }
 }
