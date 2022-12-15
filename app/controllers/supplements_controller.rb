@@ -22,7 +22,7 @@ class SupplementsController < ApplicationController
       else
         "Don't forget to take #{@supplement.name} #{@supplement.quantity} times #{@supplement.frequency}"
       end
-      CommentNotification.with(comment: comment).deliver(current_user)
+      CommentNotification.with(comment:).deliver(current_user)
       redirect_to supplements_path(@supplement)
     else
       render :new, status: :unprocessable_entity
