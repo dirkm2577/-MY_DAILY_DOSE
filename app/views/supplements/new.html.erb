@@ -15,7 +15,7 @@
       <%= f.input :quantity %>
       <%= f.input :frequency, as: :select, collection: ['Daily', 'Weekly', 'Monthly'], prompt: 'Please select' %>
     </div>
-    <%= f.input :category, as: :select, collection: ['vitamins', 'amino acids', 'minerals'] %>
+    <%= f.input :category, as: :select, collection: ['vitamins', 'amino acids', 'minerals', 'dietary supplement', 'prescription medication'] %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Add supplement", :class => " btn btn-primary", :style => "margin-bottom: 25px; margin-top: 10px; font-size: 18px; width" %>
     <% if @supplement.errors.any? %>
