@@ -17,14 +17,26 @@
   flex: 1;
 }
 
+
 .search-btn {
-  background-color: #FF9900;
-  color: white;
-  padding: 4px 24px;
   background: #FF9900;
-  transition: background 0.3s ease;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
-  --bs-btn-hover-color: #ffffff;
-  --bs-btn-active-color: #ffffff;
-  margin-right: -2px;
+  font-size: 18px;
+  text-align: center;
+  border: 0;
+  transition: all 0.3s ease 0s;
+  backdrop-filter: blur(0px);
+  --bs-btn-hover-color: #ff9900;
+  --bs-btn-active-color: #ff9900;
+  margin-left: 16px;
+  border-radius: 999px;
+}
+
+.search-btn {
+opacity: 1;
+}
+
+.search-btn:hover {
+opacity: 0.75;
 }
