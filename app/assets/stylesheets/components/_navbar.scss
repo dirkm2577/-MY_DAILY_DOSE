@@ -1,10 +1,6 @@
 .navbar {
-  margin-left: 0px;
-  padding-left: 0px;
-  opacity: 0,3;
   backdrop-filter: blur(100px);
   justify-content: space-between;
-  align-items: center;
   background: #ffffff;
   position: sticky;
   top: 0;
@@ -20,12 +16,13 @@
 
   }
 
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-  }
+#nav-button {
+  padding-top: 5px;
+}
+
+.nav-item {
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 
@@ -43,6 +40,7 @@
     color: var(--bs-navbar-brand-color);
     text-decoration: none;
     white-space: nowrap;
+    align-items: center;
 }
 
 .navbar-brand img {

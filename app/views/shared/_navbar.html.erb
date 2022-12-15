@@ -10,10 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "My Supplements", supplements_path, class: "navbar-link-s" %>
-            <%= link_to "My Reminders", notifications_path, class: "navbar-link-r" %>
-          <li class="nav-item">
+          <li class="nav-item" id="nav-button">
             <%= link_to "Add Supplement", new_supplement_path, class:"btn btn-primary" %>
           </li>
           <li class="nav-item dropdown">
