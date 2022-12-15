@@ -3,30 +3,34 @@
     <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1670472579/MyDailyDose_logo_428_194_px_ieeej8.png" %>
   <% end %>
 
-  <div class="navbar-expand-sm navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item" id="nav-button">
-            <%= link_to "Add Supplement", new_supplement_path, class:"btn btn-primary" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669220890/Alex_avatar_ytczjp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Supplements", supplements_path, class: "dropdown-item" %>
-              <%= link_to "My Reminders", notifications_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-          </li>
-        <% end %>
-      </ul>
+  <ul class="navigation">
+    <% if user_signed_in? %>
+    <div id="index-links">
+      <li class="nav-item">
+        <%= link_to "My Supplements", supplements_path, class: "navbar-link-s" %>
+      </li>
+      <li>
+        <%= link_to "My Reminders", notifications_path, class: "navbar-link-r" %>
+      </li>
     </div>
-  </div>
+    <li class="nav-item">
+      <%= link_to "Add Supplement", new_supplement_path, class:"btn btn-primary" %>
+    </li>
+    <div id="navbarNavDropdown">
+      <li class="nav-item dropdown">
+        <%= image_tag "https://res.cloudinary.com/dach7c7ct/image/upload/v1669220890/Alex_avatar_ytczjp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "My Supplements", supplements_path, class: "dropdown-item hidden" %>
+          <%= link_to "My Reminders", notifications_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+        </div>
+      </li>
+    </div>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      </li>
+    <% end %>
+  </ul>
 </nav>
