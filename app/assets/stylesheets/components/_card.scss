@@ -1,5 +1,7 @@
+
+
 .card-supp {
-  overflow: hidden;
+  // overflow: hidden;
   background: rgb(255, 255, 255);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -9,22 +11,32 @@
   height: 200px;
   width: 100%;
   object-fit: contain;
+  padding-top: 5px;
 }
 
-.card-supp h2 {
+.card-supp h3 {
   font-size: 20px;
   font-weight: bold;
-  margin: 0;
+  margin: -4px;
 }
 
-.card-supp .card-supp-infos {
+.card-supp-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: center;
+  margin-bottom: -10px;
+
+  .bell-icon {
+    font-size: x-large;
+  }
+}
+
+.card-supp-infos p {
+  padding-top: 10px;
 }
 
 a {
   text-decoration: none;
+  margin-bottom: 16px;
 }
