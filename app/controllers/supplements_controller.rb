@@ -18,10 +18,10 @@ class SupplementsController < ApplicationController
     @supplement.user = current_user
     if @supplement.save!
       comment = if @supplement.quantity == 1
-        "Don't forget to take #{@supplement.name} once #{@supplement.frequency}"
-      else
-        "Don't forget to take #{@supplement.name} #{@supplement.quantity} times #{@supplement.frequency}"
-      end
+                  "Don't forget to take #{@supplement.name} once #{@supplement.frequency}"
+                else
+                  "Don't forget to take #{@supplement.name} #{@supplement.quantity} times #{@supplement.frequency}"
+                end
       CommentNotification.with(comment:).deliver(current_user)
       redirect_to supplements_path(@supplement)
     else
