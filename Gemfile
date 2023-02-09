@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Using geocoder for approximate user location
+gem "geocoder"
+
 # Using cloudinary for image storage
 gem "cloudinary"
 
