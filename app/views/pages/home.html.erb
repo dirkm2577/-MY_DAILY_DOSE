@@ -37,4 +37,23 @@
   </div>
 
   <%= render "shared/showcase" %>
+
+  <!-- <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div> -->
+
+
+  <div id='map' style='width: 100%; height: 300px;' data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <!--<script>
+  mapboxgl.accessToken = "<%= ENV['MAPBOX_API_KEY'] %>";
+  const map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      center: [-74.5, 40], // starting position [lng, lat]
+      zoom: 9, // starting zoom
+  });
+  </script> -->
 </section>
