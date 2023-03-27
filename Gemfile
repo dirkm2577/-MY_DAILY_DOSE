@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Using Nokogiri and Open-URI for scraping Examine.com for supplement information
+gem "nokogiri"
+gem "open-uri"
+
 # Using geocoder for approximate user location
 gem "geocoder"
 

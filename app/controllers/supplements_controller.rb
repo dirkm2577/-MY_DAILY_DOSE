@@ -32,6 +32,15 @@ class SupplementsController < ApplicationController
   def show
     @review = Review.new
     @notification = Notification.new
+    # require "open-uri"
+    # require "nokogiri"
+
+    # url = "https://examine.com/supplements/#{@supplement}/"
+
+    # html_file = URI.open(url).read
+    # html_doc = Nokogiri::HTML.parse(html_file)
+
+    # @description = html_doc.search('.leading-7 p').each { |description| description.text.strip }
   end
 
   def edit
